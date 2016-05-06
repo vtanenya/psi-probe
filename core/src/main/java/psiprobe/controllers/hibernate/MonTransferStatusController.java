@@ -60,7 +60,7 @@ public class MonTransferStatusController extends TomcatContainerController {
     @Override
     protected ModelAndView handleRequestInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
         ModelAndView modelAndView = new ModelAndView(getViewName());
-        modelAndView.addObject(statusService.listStatuses());
+        modelAndView.addObject( "statusList", statusService.listStatuses());
 
         return modelAndView;
     }

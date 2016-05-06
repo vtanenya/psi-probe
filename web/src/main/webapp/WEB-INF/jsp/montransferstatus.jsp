@@ -7,11 +7,11 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf8">
-    <title><spring:message code="222" /></title>
+    <title>Test</title>
 </head>
 <body>
 
-<h3><spring:message code="222" /></h3>
+<h3>Test</h3>
 <c:if test="${!empty statusList}">
     <table class="data">
         <c:forEach items="${statusList}" var="status">
@@ -19,7 +19,7 @@
                 <td>${status.uuid}, ${status.objectUUID}</td>
                 <td>${status.transferStatus}</td>
                 <td>${status.comment}</td>
-                <td><a href="delete/${status.uuid}"><spring:message code="222" /></a></td>
+                <td><a href="delete/${status.uuid}">delete</a></td>
             </tr>
         </c:forEach>
     </table>

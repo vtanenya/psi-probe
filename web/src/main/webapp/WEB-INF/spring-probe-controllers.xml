@@ -24,6 +24,11 @@
 		<property name="viewName" value="applications"/>
 	</bean>
 
+    <bean name="/montransferstatus.htm" class="psiprobe.controllers.hibernate.MonTransferStatusController">
+		<property name="containerWrapper" ref="containerWrapper"/>
+		<property name="viewName" value="montransferstatus"/>
+	</bean>
+
 	<bean name="/resources.htm" class="psiprobe.controllers.apps.ListApplicationResourcesController">
 		<property name="containerWrapper" ref="containerWrapper"/>
 		<property name="viewName" value="resources"/>

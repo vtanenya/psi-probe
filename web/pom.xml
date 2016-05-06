@@ -24,6 +24,11 @@
 		<git.relative.path>../</git.relative.path>
 	</properties>
 	<dependencies>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.3-1100-jdbc4</version>
+        </dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>psi-probe-core</artifactId>

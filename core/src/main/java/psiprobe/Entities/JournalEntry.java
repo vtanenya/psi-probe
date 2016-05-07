@@ -16,8 +16,9 @@ public class JournalEntry {
     @GeneratedValue
     private String uuid;
 
-//    @Column(name = "senderuuid")
-//    private Person sender;
+    @JoinColumn(name = "senderuuid")
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH, optional = false)
+    private Person sender;
 
     @Column(name = "event_date")
     private Date date;
@@ -45,13 +46,13 @@ public class JournalEntry {
         this.uuid = uuid;
     }
 
-//    public Person getSender() {
-//        return sender;
-//    }
-//
-//    public void setSender(Person sender) {
-//        this.sender = sender;
-//    }
+    public Person getSender() {
+        return sender;
+    }
+
+    public void setSender(Person sender) {
+        this.sender = sender;
+    }
 
     public Date getDate() {
         return date;

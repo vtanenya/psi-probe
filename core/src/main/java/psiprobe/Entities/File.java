@@ -28,8 +28,9 @@ public class File {
     @Column(name = "creationdate")
     private Date creationDate;
 
-//    @Column(name = "f_author")
-//    private Person author;
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH, optional = false)
+    @JoinColumn(name = "f_author")
+    private Person author;
 
     public String getUuid() {
         return uuid;
@@ -71,11 +72,11 @@ public class File {
         this.creationDate = creationDate;
     }
 
-//    public Person getAuthor() {
-//        return author;
-//    }
-//
-//    public void setAuthor(Person author) {
-//        this.author = author;
-//    }
+    public Person getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Person author) {
+        this.author = author;
+    }
 }

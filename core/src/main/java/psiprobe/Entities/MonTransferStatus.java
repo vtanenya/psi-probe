@@ -28,8 +28,9 @@ public class MonTransferStatus {
     @Column(name = "change_date")
     private Date changeDate;
 
-//    @Column(name = "file_uuid")
-//    private File file;
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH, optional = false)
+    @JoinColumn(name = "file_uuid")
+    private File file;
 
     @Column(name = "editdate")
     private Date editDate;
@@ -74,13 +75,13 @@ public class MonTransferStatus {
         this.changeDate = changeDate;
     }
 
-//    public File getFile() {
-//        return file;
-//    }
-//
-//    public void setFile(File file) {
-//        this.file = file;
-//    }
+    public File getFile() {
+        return file;
+    }
+
+    public void setFile(File file) {
+        this.file = file;
+    }
 
     public Date getEditDate() {
         return editDate;

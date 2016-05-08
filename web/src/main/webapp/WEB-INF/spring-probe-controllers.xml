@@ -230,8 +230,17 @@
 		<property name="viewName" value="ajax/sql/recordset"/>
 	</bean>
 
+    <bean name="/sql/journalentryset.ajax" class="psiprobe.controllers.hibernate.JournalEntryController">
+		<property name="containerWrapper" ref="containerWrapper"/>
+		<property name="viewName" value="ajax/sql/journalentryset"/>
+	</bean>
+
 	<bean name="/sql/cachedRecordset.ajax" class="psiprobe.controllers.sql.CachedRecordSetController">
 		<property name="viewName" value="ajax/sql/recordset"/>
+	</bean>
+
+    <bean name="/sql/cachedEntryRecordset.ajax" class="psiprobe.controllers.sql.CachedRecordSetController">
+		<property name="viewName" value="ajax/sql/journalentryset"/>
 	</bean>
 
 	<bean name="/sql/queryHistory.ajax" class="psiprobe.controllers.sql.QueryHistoryController">

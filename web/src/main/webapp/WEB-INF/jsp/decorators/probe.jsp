@@ -80,17 +80,17 @@
 					</a>
 				</li>
 				<li>
-					<a class="${navTabCluster}" href="<c:url value='/journalentry.htm'/>">
+					<a class="${navTabJournalEntry}" href="<c:url value='/journalentry.htm'/>">
 						<spring:message code="probe.jsp.menu.journalentry"/>
 					</a>
 				</li>
                 <li>
-					<a class="${navTabCluster}" href="<c:url value='/montransferstatus.htm'/>">
+					<a class="${navTabMonTransferStatus}" href="<c:url value='/montransferstatus.htm'/>">
 						<spring:message code="probe.jsp.menu.montransferstatus"/>
 					</a>
 				</li>
                 <li>
-					<a class="${navTabCluster}" href="<c:url value='/kibana.htm'/>">
+					<a class="${navTabKibana}" href="<c:url value='/kibana.htm'/>">
 						<spring:message code="probe.jsp.menu.fxlog"/>
 					</a>
 				</li>

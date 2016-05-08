@@ -22,9 +22,11 @@ public class JournalEntryController extends TomcatContainerController {
 
     @Override
     protected ModelAndView handleRequestInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
-        ModelAndView modelAndView = new ModelAndView(getViewName());
-        modelAndView.addObject( "journalList", journalService.listEntrys());
 
-        return modelAndView;
+        ModelAndView mv = new ModelAndView(getViewName(), "results", journalService.listEntrys());
+        mv.addObject("rowsAffected", "1000");
+        mv.addObject("rowsPerPage", "50");
+
+        return mv;
     }
 }

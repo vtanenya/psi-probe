@@ -239,7 +239,7 @@
 		<property name="viewName" value="ajax/sql/recordset"/>
 	</bean>
 
-    <bean name="/sql/cachedEntryRecordset.ajax" class="psiprobe.controllers.sql.CachedRecordSetController">
+    <bean name="/sql/cachedEntryRecordset.ajax" class="psiprobe.controllers.sql.CachedJournalEntryController">
 		<property name="viewName" value="ajax/sql/journalentryset"/>
 	</bean>
 

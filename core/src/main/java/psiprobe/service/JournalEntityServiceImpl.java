@@ -24,9 +24,9 @@ public class JournalEntityServiceImpl implements JournalEntryService{
     }
 
     @Transactional
-    public List<JournalEntry> listEntrys() {
+    public List<JournalEntry> listEntrys(int maxRows, String senderLastname, String dateFrom, String dateTo, String eventMessage, String subjectUUID) {
 
-        return entryDAO.listJournalEntry();
+        return entryDAO.listJournalEntry(maxRows, senderLastname, dateFrom, dateTo, eventMessage, subjectUUID);
     }
 
     @Transactional

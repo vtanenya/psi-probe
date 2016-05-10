@@ -11,7 +11,7 @@ public interface JournalEntryService {
 
     public void addEntry(JournalEntry entry);
 
-    public List<JournalEntry> listEntrys();
+    public List<JournalEntry> listEntrys(int maxRows, String senderLastname, String dateFrom, String dateTo, String eventMessage, String subjectUUID);
 
     public void removeEntry(String uuid);
 }

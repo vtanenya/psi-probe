@@ -27,6 +27,7 @@
     <script type="text/javascript" src="<c:url value='/js/func.js'/>"></script>
     <script type="text/javascript" src="<c:url value='/js/areascroller.js'/>"></script>
     <script type="text/javascript" src="<c:url value='/js/journalentry.js'/>"></script>
+    <script type="text/javascript" src="<c:url value='/js/jquery-2.2.3.min.js'/>"></script>
 </head>
 
 <%--
@@ -70,13 +71,18 @@
             <dd><input type="text" id="maxRows" name="maxRows" class="txtInput" value="${maxRows}" size="6"/></dd>
             <dt><label for="rowsPerPage"><spring:message code="probe.jsp.dataSourceTest.sqlForm.rowsPerPage.label"/></label></dt>
             <dd><input type="text" id="rowsPerPage" name="rowsPerPage" class="txtInput" value="${rowsPerPage}" size="6"/></dd>
-            <dt><label for="historySize"><spring:message code="probe.jsp.dataSourceTest.sqlForm.historySize.label"/></label></dt>
-            <dd><input type="text" id="historySize" name="historySize"  class="txtInput" value="${historySize}" size="6"/></dd>
-            <li id="executeSql">
-                <a href="#" onclick="executeSql()">
-                    <spring:message code="probe.jsp.dataSourceTest.menu.execute"/>
-                </a>
-            </li>
+            <dt><label for="senderLastname">Sender Lastname</label></dt>
+            <dd><input type="text" id="senderLastname" name="senderLastname"  class="txtInput" value="${senderLastname}" size="10"/></dd>
+            <dt><label for="dateFrom">Date Range</label></dt>
+            <dd><input type="date" id="dateFrom" name="dateFrom" value="${dateFrom}" /></dd>
+            <dd><input type="date" id="dateTo" name="dateTo"  value="${dateTo}"/></dd>
+            <dt><label for="eventMessage">Event Message</label></dt>
+            <dd><input type="text" id="eventMessage" name="eventMessage"  class="txtInput" value="${eventMessage}" size="10"/></dd>
+            <dt><label for="subjectUUID">Subject UUID</label></dt>
+            <dd><input type="text" id="subjectUUID" name="subjectUUID"  class="txtInput" value="${subjectUUID}" size="10"/></dd>
+            <a href="#" onclick="executeSql()">
+                <spring:message code="probe.jsp.JournalEntry.applyFilters"/>
+            </a>
         </dl>
     </form>
 
@@ -105,11 +111,21 @@
 </div>
 
 <script type="text/javascript">
+    $.noConflict();
+
     setupAjaxActions(
             '<c:url value="/sql/journalentryset.ajax"/>');
+
     setupScrollers('sqlResultsContainer');
+
     addEvent(window, 'load', executeSql());
-    //window.onload = onload + executeSql();
+
+    jQuery(document).ready(function($) {
+        $(function() {
+            $('#dateFrom').datepicker({ dateFormat: 'dd-mm-yy' });
+            $('#dateTo').datepicker({ dateFormat: 'dd-mm-yy' });
+        });
+    });
 </script>
 
 </body>

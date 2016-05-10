@@ -11,7 +11,7 @@ public interface JournalEntryDAO {
 
     public void addJournalEntry(JournalEntry entry);
 
-    public List<JournalEntry> listJournalEntry();
+    public List<JournalEntry> listJournalEntry(int maxRows, String senderLastname, String dateFrom, String dateTo, String eventMessage, String subjectUUID);
 
     public void removeEntry(String uuid);
 }

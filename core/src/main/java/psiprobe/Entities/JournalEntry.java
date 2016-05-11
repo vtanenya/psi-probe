@@ -3,10 +3,6 @@ package psiprobe.Entities;
 import javax.persistence.*;
 import java.util.Date;
 
-/**
- * Created by vt on 06.05.16.
- */
-
 @Entity
 @Table(name = "TBL_LOG")
 public class JournalEntry {

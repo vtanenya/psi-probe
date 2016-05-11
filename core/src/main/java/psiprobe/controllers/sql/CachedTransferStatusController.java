@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.ParameterizableViewController;
-import psiprobe.model.sql.JournalEntryInfo;
+import psiprobe.model.sql.TransferStatusInfo;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,12 +13,12 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Map;
 
-public class CachedJournalEntryController extends ParameterizableViewController {
+public class CachedTransferStatusController extends ParameterizableViewController {
 
     /**
      * The Constant logger.
      */
-    private static final Logger logger = LoggerFactory.getLogger(CachedRecordSetController.class);
+    private static final Logger logger = LoggerFactory.getLogger(CachedTransferStatusController.class);
 
     @Override
     protected ModelAndView handleRequestInternal(HttpServletRequest request,
@@ -37,8 +37,8 @@ public class CachedJournalEntryController extends ParameterizableViewController 
                                     "probe.src.dataSourceTest.cachedResultSet.failure"));
             logger.error("Cannot retrieve a cached result set. Http session is NULL.");
         } else {
-            JournalEntryInfo sessData =
-                    (JournalEntryInfo) sess.getAttribute(JournalEntryInfo.JOURNAL_ENTRY_SESS_ATTR);
+            TransferStatusInfo sessData =
+                    (TransferStatusInfo) sess.getAttribute(TransferStatusInfo.TRANSFER_STATUS_SESS_ATTR);
 
             if (sessData == null) {
                 request.setAttribute(
@@ -46,7 +46,7 @@ public class CachedJournalEntryController extends ParameterizableViewController 
                         getMessageSourceAccessor().getMessage(
                                 "probe.src.dataSourceTest.cachedResultSet.failure"));
                 logger.error("Cannot retrieve a cached result set. {} session attribute is NULL.",
-                        JournalEntryInfo.JOURNAL_ENTRY_SESS_ATTR);
+                        TransferStatusInfo.TRANSFER_STATUS_SESS_ATTR);
             } else {
                 synchronized (sess) {
                     sessData.setRowsPerPage(rowsPerPage);

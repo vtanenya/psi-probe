@@ -8,10 +8,6 @@ import psiprobe.Entities.Person;
 
 import java.util.List;
 
-/**
- * Created by vt on 06.05.16.
- */
-
 @Service
 public class PersonServiceImpl implements PersonService{
 

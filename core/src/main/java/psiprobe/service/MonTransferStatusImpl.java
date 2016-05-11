@@ -8,10 +8,6 @@ import psiprobe.Entities.MonTransferStatus;
 
 import java.util.List;
 
-/**
- * Created by vt on 06.05.16.
- */
-
 @Service
 public class MonTransferStatusImpl implements MonTransferStatusService{
 
@@ -24,9 +20,9 @@ public class MonTransferStatusImpl implements MonTransferStatusService{
     }
 
     @Transactional
-    public List<MonTransferStatus> listStatuses() {
+    public List<MonTransferStatus> listStatuses(int maxRows, String objectUUID, String dateFrom, String dateTo, String status, String comment, String fileName) {
 
-        return statusDAO.listStatuses();
+        return statusDAO.listStatuses(maxRows, objectUUID, dateFrom, dateTo, status, comment, fileName);
     }
 
     @Transactional

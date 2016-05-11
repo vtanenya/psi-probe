@@ -2,10 +2,6 @@ package psiprobe.Entities;
 
 import javax.persistence.*;
 
-/**
- * Created by vt on 06.05.16.
- */
-
 @Entity
 @Table(name = "TBL_STECH_EMPLOYEE")
 public class Person {

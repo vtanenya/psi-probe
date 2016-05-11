@@ -4,14 +4,11 @@ import psiprobe.Entities.MonTransferStatus;
 
 import java.util.List;
 
-/**
- * Created by vt on 06.05.16.
- */
 public interface MonTransferStatusService {
 
     public void addStatus(MonTransferStatus status);
 
-    public List<MonTransferStatus> listStatuses();
+    public List<MonTransferStatus> listStatuses(int maxRows, String objectUUID, String dateFrom, String dateTo, String status, String comment, String fileName);
 
     public void removeStatus(String uuid);
 }

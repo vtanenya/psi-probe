@@ -3,10 +3,6 @@ package psiprobe.Entities;
 import javax.persistence.*;
 import java.util.Date;
 
-/**
- * Created by vt on 06.05.16.
- */
-
 @Entity
 @Table(name = "tbl_integration_mon_transfer_status")
 public class MonTransferStatus {
@@ -28,7 +24,7 @@ public class MonTransferStatus {
     @Column(name = "change_date")
     private Date changeDate;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH, optional = false)
+    @ManyToOne
     @JoinColumn(name = "file_uuid")
     private File file;
 

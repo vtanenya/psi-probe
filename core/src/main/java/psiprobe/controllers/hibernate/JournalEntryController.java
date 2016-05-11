@@ -13,15 +13,10 @@ import psiprobe.service.JournalEntryService;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-
-/**
- * Created by vt on 08.05.16.
- */
 
 @Controller
 public class JournalEntryController extends ContextHandlerController {

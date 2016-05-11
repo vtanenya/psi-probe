@@ -4,13 +4,13 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-public class JournalEntryInfo implements Serializable {
+public class TransferStatusInfo implements Serializable {
 
     /** The Constant serialVersionUID. */
-    private static final long serialVersionUID = 5399598239369004512L;
+    private static final long serialVersionUID = -4830349275699063972L;
 
     /** The Constant DS_TEST_SESS_ATTR. */
-    public static final String JOURNAL_ENTRY_SESS_ATTR = "journalEntryData";
+    public static final String TRANSFER_STATUS_SESS_ATTR = "transferStatusData";
 
     /** The results. */
     private List<Map<String, String>> results;
@@ -21,15 +21,17 @@ public class JournalEntryInfo implements Serializable {
     /** The rows per page. */
     private int rowsPerPage;
 
-    private String senderLastname;
+    private String objectUUID;
+
+    private String transferStatus;
+
+    private String comment;
 
     private String dateFrom;
 
     private String dateTo;
 
-    private String eventMessage;
-
-    private String subjectUUID;
+    private String fileName;
 
     /**
      * Gets the results.
@@ -85,12 +87,36 @@ public class JournalEntryInfo implements Serializable {
         this.rowsPerPage = rowsPerPage;
     }
 
-    public String getSenderLastname() {
-        return senderLastname;
+    public String getObjectUUID() {
+        return objectUUID;
     }
 
-    public void setSenderLastname(String senderLastname) {
-        this.senderLastname = senderLastname;
+    public void setObjectUUID(String objectUUID) {
+        this.objectUUID = objectUUID;
+    }
+
+    public String getTransferStatus() {
+        return transferStatus;
+    }
+
+    public void setTransferStatus(String transferStatus) {
+        this.transferStatus = transferStatus;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 
     public String getDateFrom() {
@@ -107,21 +133,5 @@ public class JournalEntryInfo implements Serializable {
 
     public void setDateTo(String dateTo) {
         this.dateTo = dateTo;
-    }
-
-    public String getEventMessage() {
-        return eventMessage;
-    }
-
-    public void setEventMessage(String eventMessage) {
-        this.eventMessage = eventMessage;
-    }
-
-    public String getSubjectUUID() {
-        return subjectUUID;
-    }
-
-    public void setSubjectUUID(String subjectUUID) {
-        this.subjectUUID = subjectUUID;
     }
 }

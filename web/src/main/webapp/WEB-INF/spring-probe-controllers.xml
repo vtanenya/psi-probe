@@ -29,10 +29,28 @@
 		<property name="viewName" value="montransferstatus"/>
 	</bean>
 
+    <bean name="/sql/transferstatusset.ajax" class="psiprobe.controllers.hibernate.MonTransferStatusController">
+        <property name="containerWrapper" ref="containerWrapper"/>
+        <property name="viewName" value="ajax/sql/transferstatusset"/>
+    </bean>
+
+    <bean name="/sql/cachedTransferstatusRecordset.ajax" class="psiprobe.controllers.sql.CachedTransferStatusController">
+        <property name="viewName" value="ajax/sql/transferstatusset"/>
+    </bean>
+
     <bean name="/journalentry.htm" class="psiprobe.controllers.hibernate.JournalEntryController">
 		<property name="containerWrapper" ref="containerWrapper"/>
 		<property name="viewName" value="journalentry"/>
 	</bean>
+
+    <bean name="/sql/journalentryset.ajax" class="psiprobe.controllers.hibernate.JournalEntryController">
+        <property name="containerWrapper" ref="containerWrapper"/>
+        <property name="viewName" value="ajax/sql/journalentryset"/>
+    </bean>
+
+    <bean name="/sql/cachedEntryRecordset.ajax" class="psiprobe.controllers.sql.CachedJournalEntryController">
+        <property name="viewName" value="ajax/sql/journalentryset"/>
+    </bean>
 
 	<bean name="/resources.htm" class="psiprobe.controllers.apps.ListApplicationResourcesController">
 		<property name="containerWrapper" ref="containerWrapper"/>
@@ -230,18 +248,7 @@
 		<property name="viewName" value="ajax/sql/recordset"/>
 	</bean>
 
-    <bean name="/sql/journalentryset.ajax" class="psiprobe.controllers.hibernate.JournalEntryController">
-		<property name="containerWrapper" ref="containerWrapper"/>
-		<property name="viewName" value="ajax/sql/journalentryset"/>
-	</bean>
 
-	<bean name="/sql/cachedRecordset.ajax" class="psiprobe.controllers.sql.CachedRecordSetController">
-		<property name="viewName" value="ajax/sql/recordset"/>
-	</bean>
-
-    <bean name="/sql/cachedEntryRecordset.ajax" class="psiprobe.controllers.sql.CachedJournalEntryController">
-		<property name="viewName" value="ajax/sql/journalentryset"/>
-	</bean>
 
 	<bean name="/sql/queryHistory.ajax" class="psiprobe.controllers.sql.QueryHistoryController">
 		<property name="viewName" value="ajax/sql/queryHistory"/>

@@ -1,6 +1,7 @@
 package psiprobe.controllers.hibernate;
 
 import org.apache.catalina.Context;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.ServletRequestUtils;
@@ -70,9 +71,9 @@ public class JournalEntryController extends ContextHandlerController {
         {
             Map<String, String> record = new LinkedHashMap<>();
 
-            record.put("Sender name", entry.getSender().getLastName() + " "
-                    + entry.getSender().getFirstName().substring(0,1) + ". "
-                    + entry.getSender().getMiddleName().substring(0,1) + ". ");
+            record.put("Sender name", (StringUtils.isBlank(entry.getSender().getLastName()) ? "" : entry.getSender().getLastName()) + " "
+                    + (StringUtils.isBlank(entry.getSender().getFirstName()) ? "" : entry.getSender().getFirstName().substring(0,1)) + ". "
+                    + (StringUtils.isBlank(entry.getSender().getMiddleName()) ? "" : entry.getSender().getMiddleName().substring(0,1) + ". "));
             record.put("Date", entry.getDate().toString());
             record.put("Category", entry.getCategory());
             record.put("Message", entry.getMessage());

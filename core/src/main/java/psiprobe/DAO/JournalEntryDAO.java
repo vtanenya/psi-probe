@@ -4,6 +4,11 @@ import psiprobe.Entities.JournalEntry;
 
 import java.util.List;
 
+/**
+ * @author Vladimir tanenya
+ * 01.05.16.
+ */
+
 public interface JournalEntryDAO {
 
     public void addJournalEntry(JournalEntry entry);

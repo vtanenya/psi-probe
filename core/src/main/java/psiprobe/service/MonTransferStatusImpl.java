@@ -8,6 +8,11 @@ import psiprobe.Entities.MonTransferStatus;
 
 import java.util.List;
 
+/**
+ * @author Vladimir tanenya
+ * 01.05.16.
+ */
+
 @Service
 public class MonTransferStatusImpl implements MonTransferStatusService{
 

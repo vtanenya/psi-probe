@@ -12,7 +12,8 @@
 /*
  Java Script functions for datasourcetest.jsp
 
- Author: Andy Shapoval, Vlad Ilyushchenko
+ @author Vladimir tanenya
+ 01.05.16.
  */
 
 var recordsetUrl = '';

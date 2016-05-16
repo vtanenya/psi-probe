@@ -13,6 +13,11 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author Vladimir tanenya
+ * 01.05.16.
+ */
+
 public class CachedTransferStatusController extends ParameterizableViewController {
 
     /**

@@ -18,6 +18,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * @author Vladimir tanenya
+ * 01.05.16.
+ */
+
 @Repository
 public class MonTransferStatusDAOImpl implements MonTransferStatusDAO{
 
@@ -61,7 +66,7 @@ public class MonTransferStatusDAOImpl implements MonTransferStatusDAO{
             c.add(Restrictions.ilike("comment", comment, MatchMode.ANYWHERE));
 
         c.setMaxResults(maxRows);
-        c.addOrder(Order.asc("editDate"));
+        c.addOrder(Order.desc("editDate"));
 
         return c.list();
     }

@@ -8,6 +8,11 @@ import psiprobe.Entities.Person;
 
 import java.util.List;
 
+/**
+ * @author Vladimir tanenya
+ * 01.05.16.
+ */
+
 @Repository
 public class PersonDAOImpl implements PersonDAO{
 

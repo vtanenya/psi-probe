@@ -8,6 +8,11 @@ import psiprobe.Entities.File;
 
 import java.util.List;
 
+/**
+ * @author Vladimir tanenya
+ * 01.05.16.
+ */
+
 @Service
 public class FileServiceImpl implements FileService {
 

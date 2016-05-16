@@ -34,7 +34,8 @@
     Provides GUI for datasource connectivity testing.
     Allows a user to enter an SQL query and displays results returned by the query.
 
-    Author: Andy Shapoval, Vlad Ilyushchenko
+    @author Vladimir tanenya
+    01.05.16.
 --%>
 
 <body>

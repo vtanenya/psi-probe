@@ -18,6 +18,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * @author Vladimir tanenya
+ * 01.05.16.
+ */
+
 @Repository
 public class JournalEntryDAOImpl implements JournalEntryDAO {
 
@@ -59,7 +64,7 @@ public class JournalEntryDAOImpl implements JournalEntryDAO {
             c.add(Restrictions.eq("subject", subjectUUID));
 
         c.setMaxResults(maxRows);
-        c.addOrder(Order.asc("date"));
+        c.addOrder(Order.desc("date"));
 
         return c.list();
     }

@@ -17,7 +17,8 @@
 <%--
 	an Ajax HTML snippet to display results returned by an SQL query
 
-	Author: Andy Shapoval
+    @author Vladimir tanenya
+    01.05.16.
 --%>
 
 <div id="sqlResultsContainer">
